@@ -8,7 +8,7 @@ class Weapon:
     def actack(self, enemy):
         enemy.life -= self.damage
         
-axe = Weapon ('Hacha a 2 main', 5)
+axe = Weapon ('Hacha a 2 main', 5, 1)
 
 
 
@@ -25,4 +25,5 @@ class Magic:
     def actack(self, enemy):
         enemy.life -= self.damage
 
-wand = Magic ('La baguette de sureau', 10000)
+wand = Magic ('La baguette de sureau', 1000, 100, 50, 0.01)
+
