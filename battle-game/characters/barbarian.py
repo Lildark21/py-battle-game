@@ -1,7 +1,6 @@
 from gear.weapon import Weapon
 from characters.enemy import Orc
 
-
 class Barbarian:
     def __init__(self, name, health=100, attack_power=20, weapon=30):
         self.name = name
@@ -19,12 +18,4 @@ class Barbarian:
     def is_alive(self):
         return self.health > 0
 
-
-    def attack(self, enemy):
-        enemy.health -= self.attack_power
-        print(f"{self.name} attacks {enemy.name} for {self.attack_power} damage!")
-
-
 barbarian = Barbarian("Bob le tueur")
-
-
