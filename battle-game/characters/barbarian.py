@@ -15,4 +15,4 @@ class Barbarian:
         
 barbarian = Barbarian('Bob', 200, 'Hache a 2 main', 'Amure de fer', 1)
 
-barbarian.feature()
+
