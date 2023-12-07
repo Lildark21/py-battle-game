@@ -1,14 +1,14 @@
 # Creation d'une classe arme
 class Weapon:
-    def __init__(self, name, damage, level) :
+    def __init__(self, name, damage=30, ):
         self.name = name
         self.damage = damage
-        self.level = level
+        # self.level = level
 # Creation de des déga sur un enemy
     def actack(self, enemy):
         enemy.life -= self.damage
         
-axe = Weapon ('Hacha a 2 main', 5, 1)
+axe = Weapon ('Hacha a 2 main', 30)
 
 
 
