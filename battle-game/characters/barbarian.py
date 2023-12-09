@@ -1,12 +1,14 @@
 from gear.weapon import Weapon
+from gear.armor import Armor
 from characters.enemy import Orc
 
 class Barbarian:
-    def __init__(self, name, health=100, attack_power=20, weapon=None):
+    def __init__(self, name, health=50, attack_power=20, weapon=None, armor=None):
         self.name = name
         self.health = health
         self.attack_power = attack_power
         self.weapon = weapon
+        self.armor = armor
 
     def attack(self, opponent):
         total_attack_power = self.attack_power
@@ -19,4 +21,5 @@ class Barbarian:
         return self.health > 0
 
 axe = Weapon('Hacha a 2 main', 30)
-barbarian = Barbarian("Bob le tueur", weapon=axe)
+leather_armor = Armor('Armure de cuir', 50)
+barbarian = Barbarian("Bob le tueur", weapon=axe, armor=leather_armor)
