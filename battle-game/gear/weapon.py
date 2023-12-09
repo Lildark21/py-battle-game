@@ -1,29 +1,23 @@
-# Creation d'une classe arme
 class Weapon:
-    def __init__(self, name, damage=30, ):
+    def __init__(self, name, damage=30):
         self.name = name
         self.damage = damage
-        # self.level = level
-# Creation de des déga sur un enemy
-    def actack(self, enemy):
+
+    def attack(self, enemy):
         enemy.life -= self.damage
-        
-axe = Weapon ('Hacha a 2 main', 30)
 
+    def __str__(self):
+        return f"Weapon: {self.name}, Damage: {self.damage}"
 
-
-# creation de la classe magie le barbare ne peut pas utilisé
 class Magic:
-    def __init__(self, name, damage, level, mana, drop):
+    def __init__(self, name, damage=1000, mana=100, drop=0.001):
         self.name = name
         self.damage = damage
-        self.level = level
         self.mana = mana
         self.drop = drop
-        
-# Creation de des déga sur un enemy
-    def actack(self, enemy):
+
+    def attack(self, enemy):
         enemy.life -= self.damage
 
-wand = Magic ('La baguette de sureau', 1000, 100, 50, 0.01)
-
+    def __str__(self):
+        return f"Magic: {self.name}, Damage: {self.damage}, Mana: {self.mana}, Drop: {self.drop}"
