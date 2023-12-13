@@ -1,5 +1,6 @@
 from characters.barbarian import Barbarian
 from gear.weapon import Weapon
+from gear.armor import Armor
 from characters.enemy import Orc
 
 
