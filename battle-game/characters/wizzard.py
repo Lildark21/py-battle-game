@@ -12,9 +12,8 @@ class Wizzard:
         print('weapon:',self.weapon)
         print('mana:',self.mana)
         print('level',self.level)
-        
 
-
-
+    
+    
 
 

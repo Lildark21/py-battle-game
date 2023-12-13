@@ -1,6 +1,6 @@
 import random
 from gear.weapon import Weapon
-from gear.armor import Armor
+from gear.armure import Armor
 
 class Orc:
     def __init__(self, name, health=380, attack_power=10):
@@ -22,8 +22,3 @@ class Orc:
         else:
             return Armor('Armure de cuir', 50)
 
-# Création d'un orc
-orc = Orc("Gruumsh")
-# L'orc laisse tomber un objet
-item = orc.drop_item()
-print(item)
