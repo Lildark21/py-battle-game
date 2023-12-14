@@ -2,6 +2,7 @@ import random
 from gear.weapon import Weapon
 from gear.armure import Armor
 
+
 class Orc:
     def __init__(self, name, health=380, attack_power=10):
         self.name = name

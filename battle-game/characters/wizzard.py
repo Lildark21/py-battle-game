@@ -1,13 +1,14 @@
 from gear.armure import Armor
 from characters.barbarian import Barbarian
 from gear.weapon import Magic,Weapon
-import tourpartour
+from characters.enemy import Orc
 
 class Wizzard:
-    def __init__(self,name,hp,weapon,mana,level):
+    def __init__(self,name,hp,weapon,armor,mana,level):
         self.name = name
         self.hp = hp
         self.weapon = weapon
+        self.armor = armor
         self.mana= mana
         self.level= level
 
@@ -15,17 +16,16 @@ class Wizzard:
         print('name :',self.name)
         print('hp :',self.hp)
         print('weapon:',self.weapon)
+        print('armor', self.armor)
         print('mana:',self.mana)
         print('level',self.level)
  
  
-    def attackwizzard(enemy):
-        Barbarian.health - Magic.damage
-        Wizzard.mana - 10
-        if Wizzard.mana <= 0:
-            print('Vous n\avez plus de mana')
-            Barbarian.health - Weapon.damage
-        print('il lui reste {Barbarian.health} de point de vie')
+    def attack(self, enemy):
+        enemy.health -= self.weapon.damage
+        self.mana -10 
+        print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
+        
         
 
    

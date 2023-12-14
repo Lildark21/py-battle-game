@@ -3,10 +3,9 @@ from gear.armure import Armor
 from characters.enemy import Orc
 
 class Barbarian:
-    def __init__(self, name, health=50, attack_power=20, weapon=None, armor=None):
+    def __init__(self,name, health, weapon,armor):
         self.name = name
         self.health = health
-        self.attack_power = attack_power
         self.weapon = weapon
         self.armor = armor
 
@@ -22,6 +21,6 @@ class Barbarian:
 
 
     def attack(self, enemy):
-        enemy.health -= self.attack_power
-        print(f"{self.name} attacks {enemy.name} for {self.attack_power} damage!")
+        enemy.hp -= self.weapon.damage
+        print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
 
