@@ -26,6 +26,7 @@ ThorArmor = Thor.health + random.choice(ListArmor)
 
 while marie.hp> 0 and Thor.health > 0:
     marie.attack(Thor)
+   
 
     if Thor.health <= 0:
         print("Marie à gagné")
