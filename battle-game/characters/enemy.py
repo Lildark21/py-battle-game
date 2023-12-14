@@ -3,7 +3,7 @@ from gear.weapon import Weapon
 from gear.armure import Armor
 
 class Orc:
-    def __init__(self, name, health=380, attack_power=10):
+    def __init__(self, name, health=880, attack_power=10, drop_item=0.5):
         self.name = name
         self.health = health
         self.attack_power = attack_power
