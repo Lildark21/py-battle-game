@@ -21,8 +21,7 @@ WizzardArmor = marie.hp + random.choice(ListArmor)
 ThorArmor = Thor.health + random.choice(ListArmor)
 
 
-
-    
+   
 
 while marie.hp> 0 and Thor.health > 0:
     marie.attack(Thor)
