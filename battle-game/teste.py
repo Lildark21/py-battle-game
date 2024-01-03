@@ -19,4 +19,4 @@ def choisir_personnage():
         except ValueError:
             print("Veuillez entrer un nombre valide.")
 
-choisir_personnage()
+choisir_personnage(name,defense)
