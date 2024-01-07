@@ -28,7 +28,7 @@ class Wizzard:
         enemy.armor.defense -=self.weapon.damage
         self.mana -10 
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f'il reste {enemy.hp} de point de vie au barbare')
+        print(f'il reste {enemy.armor.defense} de point darmure au barbare')
 
 
     def attack_hp(self, enemy):

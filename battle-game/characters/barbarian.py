@@ -23,7 +23,7 @@ class Barbarian:
     def attack(self, enemy):
         enemy.armor.defense -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f"il reste {enemy.hp} de point de vie à la sorcière")
+        print(f"il reste {enemy.armor.defense} de point d'armure  à la sorcière")
 
     def attack_hp(self, enemy):
         enemy.hp -= self.weapon.damage

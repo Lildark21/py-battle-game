@@ -7,7 +7,7 @@ from characters.enemy import Orc
 
 
 axe = Weapon ('Hacha a 2 main', 30)
-wand = Magic('La baguette de sureau', 10, 100, 0.01)
+wand = Magic('La baguette de sureau', 100, 100, 0.01)
  
 marie = Wizzard('marie',100,wand,None,100,1)
 Thor= Barbarian('Thor', 200, axe, None)
@@ -29,7 +29,7 @@ def choose_character():
 
 
     if choose_character == "1":
-        wand = Magic('La baguette de sureau', 10, 100, 0.01)
+        wand = Magic('La baguette de sureau', 100, 100, 0.01)
  
         marie = Wizzard('marie',100,wand,None,100,1)
        
@@ -102,6 +102,7 @@ def choose_enemy():
         print("vous allez combattre marie")
         return marie
     elif choose_enemy == "2":
+        
         print("Vous aller combatre Thor")
         return Thor
     
@@ -126,7 +127,7 @@ character = choose_character()
 # print(f"Personnage choisi : {character}")
 # print(type(character))
 character_armor = choose_armor()
-print(character_armor.name)
+# print(character_armor.name)
 character.equip_armor(character_armor)
 print(enemy.name)
 print(character.armor.defense)
@@ -149,16 +150,15 @@ while character.armor.defense > 0 and enemy.armor.defense > 0:
    
     character.attack(enemy)
     
-    
-
-        
+            
     enemy.attack(character)
     
 
 if character.armor.defense <= 0:
     print('votre armure est cassé')
-if enemy.armor.defense <= 0:
-    print('vous avez cassé larmure de votre adversaire')
+
+    if enemy.armor.defense <= 0:
+        print('vous avez cassé larmure de votre adversaire')
 
 while character.hp > 0 and enemy.hp > 0:
 
