@@ -37,7 +37,7 @@ class Goblin:
         return self.health > 0
     
 class Cyclope:
-    def __init__(self, name, health=150, attack_power=5 ):
+    def __init__(self, name, health=150, attack_power=20 ):
         self.name =name
         self.health=health
         self.attack_power=attack_power
@@ -49,7 +49,7 @@ class Cyclope:
         return self.health > 0
     
 class Minotaure:
-    def __init__(self, name, health=100, attack_power=5 ):
+    def __init__(self, name, health=100, attack_power=30 ):
         self.name =name
         self.health=health
         self.attack_power=attack_power
@@ -60,8 +60,9 @@ class Minotaure:
     def is_alive(self):
         return self.health > 0
 
+# boss
 class Smaug:
-    def __init__(self, name, health=500, attack_power=5 ):
+    def __init__(self, name, health=500, attack_power=50):
         self.name =name
         self.health=health
         self.attack_power=attack_power
@@ -71,4 +72,3 @@ class Smaug:
 
     def is_alive(self):
         return self.health > 0
-

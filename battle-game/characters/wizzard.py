@@ -36,14 +36,3 @@ class Wizzard:
         self.mana -10 
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
         print(f'il reste {enemy.hp} de point de vie au barbare')
-    
-        
-
-   
-    
-    
-
-    
-    
-
-

@@ -166,18 +166,3 @@ while character.hp > 0 and enemy.hp > 0:
     
 
     enemy.attack_hp(character)
-
-
-
-    
-
-
-
-
- 
- 
-
-
-    
-
-
