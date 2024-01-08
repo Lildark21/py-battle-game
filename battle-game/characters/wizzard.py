@@ -22,20 +22,24 @@ class Wizzard:
 
     def equip_armor(self,armor):
         self.armor = armor
- 
- 
+    
+    def equip_weapon(self,weapon):
+        self.weapon =weapon
+  
     def attack(self, enemy):
         enemy.armor.defense -=self.weapon.damage
-        self.mana -10 
+        self.mana - self.weapon.mana
+        print(f'il vous reste {self.mana} de mana')
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f'il reste {enemy.armor.defense} de point darmure au barbare')
+        print(f'il reste {enemy.armor.defense} de point darmure à {enemy.name}')
 
 
     def attack_hp(self, enemy):
         enemy.hp -= self.weapon.damage
-        self.mana -10 
+        self.mana -self.weapon.mana
+        print(f'il vous reste {self.mana} de mana')
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f'il reste {enemy.hp} de point de vie au barbare')
+        print(f'il reste {enemy.hp} de point de vie à {enemy.name}')
     
         
 
