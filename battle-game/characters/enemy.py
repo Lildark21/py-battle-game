@@ -4,11 +4,10 @@ from gear.armure import Armor
 
 
 class Orc:
-    def __init__(self, name, health=880, attack_power=10, drop_item=0.5):
+    def __init__(self, name, health=880, attack_power=10,):
         self.name = name
         self.health = health
         self.attack_power = attack_power
-        self.drop_item=drop_item
 
     def attack(self, opponent):
         opponent.health -= self.attack_power
@@ -16,13 +15,6 @@ class Orc:
 
     def is_alive(self):
         return self.health > 0
-
-    def drop_item(self):
-        drop_rate = random.random()
-        if drop_rate < 0.5:
-            return Weapon('Hacha a 2 main', 30)
-        else:
-            return Armor('Armure de cuir', 50)
         
 class Goblin:
     def __init__(self, name, health=100, attack_power=5 ):
