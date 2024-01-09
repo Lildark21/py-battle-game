@@ -21,3 +21,10 @@ class Magic:
 
     def __str__(self):
         return f"Magic: {self.name}, Damage: {self.damage}, Mana: {self.mana}, Drop: {self.drop}"
+
+class Spell:
+    def __init__(self,name,damage,mana):
+        self.name =name
+        self.damage =damage
+        self.mana = mana
+    

@@ -6,13 +6,11 @@ class Barbarian:
         self.armor = armor
 
     def attack(self, opponent):
-        total_attack_power = self.attack_power
-        if self.weapon is not None:
-            total_attack_power += self.weapon.damage
-        for _ in range(4):
+        total_attack_power = self.attack_power 
+        for _ in range(2):
             if opponent.is_alive():
-                opponent.hp -= total_attack_power
-                print (f"{self.name} attacks {opponent.name} for {total_attack_power} damage!")
+                opponent.armor.defense -= total_attack_power
+                print (f"{self.name} attacks x2{opponent.name} for {total_attack_power} damage! ")
             else:
                 break
 
@@ -27,11 +25,22 @@ class Barbarian:
         enemy.armor.defense -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
         print(f"il reste {enemy.armor.defense} de point d'armure à {enemy.name}")
+        enemy.armor.defense -= self.weapon.damage
+        print(f'{self.name} attack aggain {enemy.name}')
+        print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
+        enemy.armor.defense -= self.weapon.damage
+        print(f"il reste {enemy.armor.defense} de point d'armure à {enemy.name}")
+        
 
     def attack_hp(self, enemy):
         enemy.hp -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f"il reste {enemy.hp} de point de vie à {enemy.name}")
+        print(f"il reste {enemy.hp} de point d'armure à {enemy.name}")
+        enemy.hp -= self.weapon.damage
+        print(f'{self.name} attack aggain {enemy.name}')
+        enemy.armor.defense -= self.weapon.damage
+        print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
+        print(f"il reste {enemy.hp} de point d'armure à {enemy.name}")
 
     def equip_armor(self,armor):
         self.armor = armor 

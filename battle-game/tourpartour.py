@@ -2,21 +2,16 @@ import random
 from gear.armure import Armor
 from characters.wizzard import Wizzard
 from characters.barbarian import Barbarian
-from gear.weapon import Weapon, Magic
+from gear.weapon import Weapon, Magic, Spell
 from characters.enemy import Orc
-
 
 axe = Weapon ('Hacha a 2 main', 30)
 wand = Magic('La baguette de sureau', 100, 10, 0.01)
 sword = Weapon('Epée', 20)
 wandfire = Magic('Baguette de feu', 100, 15,0.01)
-marie = Wizzard('marie',100,None,None,100,1)
+Fireboll = Spell('Boule de feu', 50,15)
+marie = Wizzard('marie',100,None,None,100,1,Fireboll)
 Thor= Barbarian('Thor', 200, None, None)
-
-
-
-
-
 
 def choose_character():
     
@@ -26,13 +21,11 @@ def choose_character():
    
     choose_character = input("Choisisser votre personage  : ")
 
-
-
-
+    
     if choose_character == "1":
         wand = Magic('La baguette de sureau', 100, 10, 0.01)
  
-        marie = Wizzard('marie',100,None,None,100,1)
+        marie = Wizzard('marie',100,None,None,100,1,Fireboll)
        
         print('vous avez choisi marie')
         # print(f'le barbare est lenemy')
@@ -105,7 +98,7 @@ def choose_weapon():
         print('vous avez choisi une baguette de feu')
         return wandfire
     
-def enemy_weapon():
+def enemy_weapon(enemy):
     axe = Weapon ('Hacha a 2 main', 30)
     wand = Magic('La baguette de sureau', 75, 10, 0.01)
     wandfire = Magic('Baguette de feu', 90, 15,0.01)
@@ -113,7 +106,7 @@ def enemy_weapon():
     Barbarian_weapon = [axe,sword]
     Wizzard_weapon = [wand,wandfire]
 
-    enemy =choose_enemy()
+
     if enemy.name == 'marie':
         random_wand = random.choice(Wizzard_weapon)
         return random_wand
@@ -126,17 +119,17 @@ def enemy_weapon():
 
          
 def choose_enemy():
-    marie = Wizzard('marie',100,None, None,100,1)
+    marie = Wizzard('marie',100,None, None,100,1,Fireboll)
     Thor= Barbarian('Thor', 200, None, None)
     print("1. Marie")
     print("2. Thor")
-    choose_enemy = input("Choisisser votre enemy  : ")
+    choose = input("Choisisser votre enemy  : ")
     
 
-    if choose_enemy == "1":
+    if choose == "1":
         print("vous allez combattre marie")
         return marie
-    elif choose_enemy == "2":
+    elif choose == "2":
         
         print("Vous aller combatre Thor")
         return Thor
@@ -149,13 +142,12 @@ def random_armor():
     ListArmor = [Iron,Diamond,Netherite]
     random_choose_armor = random.choice(ListArmor)
     return random_choose_armor
-    
-
-
+   
      
 enemy = choose_enemy()
+
 enemy_armor = random_armor()
-Weapon_for_enemy = enemy_weapon()
+Weapon_for_enemy = enemy_weapon(enemy)
 
 print(Weapon_for_enemy)
 
@@ -163,16 +155,12 @@ enemy.equip_armor(enemy_armor)
 character = choose_character()
 weapon_for_character = choose_weapon()
 character.equip_weapon(weapon_for_character)
-
 enemy.equip_weapon(Weapon_for_enemy)
 character_armor = choose_armor()
 character.equip_armor(character_armor)
 print(character.weapon.name)
-print(enemy.weapon)
-   
-    
-
-
+print(enemy.weapon) 
+  
 while character.armor.defense > 0 and enemy.armor.defense > 0:
    
     character.attack(enemy)
@@ -194,3 +182,5 @@ while character.hp > 0 and enemy.hp > 0:
     
 
     enemy.attack_hp(character)
+
+
