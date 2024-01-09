@@ -9,7 +9,7 @@ class Barbarian:
         total_attack_power = self.attack_power
         if self.weapon is not None:
             total_attack_power += self.weapon.damage
-        for _ in range(2):
+        for _ in range(4):
             if opponent.is_alive():
                 opponent.hp -= total_attack_power
                 print (f"{self.name} attacks {opponent.name} for {total_attack_power} damage!")
