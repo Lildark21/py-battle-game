@@ -7,9 +7,9 @@ from characters.enemy import Orc
 
 
 axe = Weapon ('Hacha a 2 main', 30)
-wand = Magic('La baguette de sureau', 100, 100, 0.01)
+wand = Magic('La baguette de sureau', 100, 10, 0.01)
 sword = Weapon('Epée', 20)
-wandfire = Magic('Baguette de feu', 100, 100,0.01)
+wandfire = Magic('Baguette de feu', 100, 15,0.01)
 marie = Wizzard('marie',100,None,None,100,1)
 Thor= Barbarian('Thor', 200, None, None)
 
@@ -169,20 +169,8 @@ character_armor = choose_armor()
 character.equip_armor(character_armor)
 print(character.weapon.name)
 print(enemy.weapon)
-# print(f"Personnage choisi : {character}")
-# print(type(character))
-
-# print(character_armor.name)
-
-
-# print(enemy.name)
-# print(character.armor.defense)
-# print((enemy.armor.defense))
-
-
-     
+   
     
-
 
 
 while character.armor.defense > 0 and enemy.armor.defense > 0:
@@ -196,8 +184,9 @@ while character.armor.defense > 0 and enemy.armor.defense > 0:
 if character.armor.defense <= 0:
     print('votre armure est cassé')
 
-    if enemy.armor.defense <= 0:
-        print('vous avez cassé larmure de votre adversaire')
+if enemy.armor.defense <= 0:
+  
+  print('vous avez cassé larmure de votre adversaire')
 
 while character.hp > 0 and enemy.hp > 0:
 
