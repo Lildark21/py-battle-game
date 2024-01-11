@@ -35,12 +35,12 @@ class Barbarian:
     def attack_hp(self, enemy):
         enemy.hp -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f"il reste {enemy.hp} de point d'armure à {enemy.name}")
+        print(f"il reste {enemy.hp} hp à {enemy.name}")
         enemy.hp -= self.weapon.damage
         print(f'{self.name} attack aggain {enemy.name}')
         enemy.armor.defense -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
-        print(f"il reste {enemy.hp} de point d'armure à {enemy.name}")
+        print(f"il reste {enemy.hp} hp à {enemy.name}")
 
     def equip_armor(self,armor):
         self.armor = armor 
