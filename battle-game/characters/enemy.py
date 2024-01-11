@@ -4,7 +4,7 @@ from gear.armure import Armor
 
 
 class Orc:
-    def __init__(self, name, health=880, attack_power=10,):
+    def __init__(self, name, health=250, attack_power=10,):
         self.name = name
         self.health = health
         self.attack_power = attack_power
