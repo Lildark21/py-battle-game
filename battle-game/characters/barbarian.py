@@ -5,17 +5,7 @@ class Barbarian:
         self.weapon = weapon
         self.armor = armor
 
-    def attack(self, opponent):
-        total_attack_power = self.attack_power
-        if self.weapon is not None:
-            total_attack_power += self.weapon.damage
-        for _ in range(4):
-            if opponent.is_alive():
-                opponent.hp -= total_attack_power
-                print (f"{self.name} attacks {opponent.name} for {total_attack_power} damage!")
-            else:
-                break
-
+ 
     def is_alive(self):
         return self.hp> 0
 
@@ -32,3 +22,7 @@ class Barbarian:
 
     def equip_armor(self,armor):
         self.armor = armor 
+
+    def double_attack(self, enemy):
+        self.attack(enemy)
+        self.attack(enemy)

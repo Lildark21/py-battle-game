@@ -1,7 +1,7 @@
 from characters.barbarian import Barbarian
 from gear.weapon import Weapon
 from gear.armure import Armor
-from characters.enemy import Orc
+import arena
 import tourpartour
 
 
