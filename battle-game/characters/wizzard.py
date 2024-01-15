@@ -31,14 +31,15 @@ class Wizzard:
   
     def attack(self, enemy):
         choice_atk = input('1. attaquer avec l\'arme - 2. attaquer avec un sort : ')
-        if self.mana <= 0:
-                print('Vous n\'avez plus de mana')
-                return choice_atk
+        
         if choice_atk == "1":
             enemy.armor.defense -=self.weapon.damage
             print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
             print(f'il reste {enemy.armor.defense} à {enemy.name}')
         if choice_atk == "2":
+            if self.mana <= 0:
+                print('Vous n\'avez plus de mana')
+                return choice_atk
             enemy.armor.defense -= self.spell.damage
             self.mana -= self.spell.mana
             print(f'il vous reste {self.mana} de mana')
