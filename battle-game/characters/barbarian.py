@@ -7,12 +7,7 @@ class Barbarian:
 
  
 
-    def equip_weapon(self,weapon):
-        self.weapon =weapon
-
-    
-
-
+        
     def attack(self, enemy):
         enemy.armor.defense -= self.weapon.damage
         print(f"{self.name} attacks {enemy.name} for {self.weapon.damage} damage!")
